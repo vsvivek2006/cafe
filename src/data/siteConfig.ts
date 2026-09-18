@@ -26,5 +26,6 @@ export const siteConfig = {
     register: "https://cafegrow.in",
     bookDemo: "https://wa.me/916207300553?text=Hello%20CafeGrow,%20I%20would%20like%20a%20free%20demo%20for%20my%20food%20hospitality%20business.",
   },
+  googleSiteVerification: "_6RB3X66nKqefdhQpbXaQyu_953e38b3G6aDzkA6Zjg",
 };
 
