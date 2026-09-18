@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+@theme {
+  --color-espresso-950: #120b06;
+  --color-espresso-900: #1b120c;
+  --color-espresso-850: #241810;
+  --color-espresso-800: #2d1e14;
+  --color-espresso-700: #422b1c;
+  --color-espresso-600: #5c3b26;
+  --color-terracotta-600: #a85827;
+  --color-terracotta-500: #c26d38;
+  --color-terracotta-400: #d6814b;
+  --color-amber-500: #d97706;
+  --color-amber-400: #f59e0b;
+  --color-amber-300: #fcd34d;
+  --color-cream-50: #faf7f2;
+  --color-cream-100: #f4eee5;
+  --color-cream-200: #e9decfa;
+  --color-cream-300: #ddd0be;
+  --color-warm-slate: #2c2927;
+  --color-emerald-accent: #059669;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #faf7f2;
+  --foreground: #1b120c;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #faf7f2;
+  color: #1b120c;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4eee5;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6814b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c26d38;
+}
+
+/* Glassmorphism helpers */
+.glass-nav {
+  background: rgba(27, 18, 12, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 214, 199, 0.7);
+}
+
+.glass-card-dark {
+  background: rgba(27, 18, 12, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(194, 109, 56, 0.25);
+}
+
+/* Shimmer animation */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
 }
